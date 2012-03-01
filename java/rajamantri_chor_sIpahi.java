@@ -1,21 +1,21 @@
-	public class rajamantri extends Activity 
+	public class rajaMantri extends Activity 
 	{
 		@Override
-		public void onbackedit()
+		public void onBackEdit()
 		{
 			
 			//nothing to do	
 		}
 
 		@Override
-		protected void onpostresume() 
+		protected void onPostResume() 
 		{
 			// TODO Auto-generated method stub
-			super.onpostresume();
+			super.onPostResume();
 		}
 
 		@Override
-		public boolean onkeydown(int keyCode, KeyEvent event) 
+		public boolean onKeyDown(int keyCode, KeyEvent event) 
 		{
 			AlertDialog dialog = new AlertDialog.Builder(this).create();
 			dialog.setTitle("Exit game!");
@@ -42,7 +42,7 @@
 		}
 
 		@Override
-		public void onlowmemory() 
+		public void onLowMemory() 
 		{
 			AlertDialog dialog = new AlertDialog.Builder(this).create();
 			dialog.setTitle("Low memory!");
@@ -258,7 +258,6 @@
 					player3_name = editPlayer3.getText().toString();
 					player4_name = editPlayer4.getText().toString();
 					
-					
 					if(player1_name.equals("")||player2_name.equals("")||player3_name.equals("")||player4_name.equals(""))
 					{
 						
@@ -285,8 +284,6 @@
 						playersArray[1] = player2_name;
 						playersArray[2] = player3_name;
 						playersArray[3] = player4_name;
-						
-						
 						
 						txtPlayer1 = (View) findViewById(R.id.txtPlayer1);
 						txtPlayer1.setText("1."+player1_name + " [" + p1score + "]");
@@ -680,32 +677,32 @@
 							
                 // TODO Auto-generated method stub
                 player2 = solutionArray[1];
-				btnPod2.setText(player2);
-				btnPod2.setBackgroundResource(R.drawable.podopen);
-				btnPod1.setClickable(false);
-				btnPod3.setClickable(false);
-				btnPod4.setClickable(false);
-				if(txtTurn.getText().equals(player1_name + "'s" + " turn!"))
+		btnPod2.setText(player2);
+		btnPod2.setBackgroundResource(R.drawable.podopen);
+		btnPod1.setClickable(false);
+		btnPod3.setClickable(false);
+		btnPod4.setClickable(false);
+		if(txtTurn.getText().equals(player1_name + "'s" + " turn!"))
                 {
                     if(player2.equals("MANTRI"))
                     {
-					    player1_role = "MANTRI";
+			player1_role = "MANTRI";
                     }
-					if(player2.equals("RAJA"))
+		    if(player2.equals("RAJA"))
                     {	
-					    player1_role = "RAJA";
+			player1_role = "RAJA";
                     }
                     if(player2.equals("SIPAHI"))
                     {
-					    player1_role = "SIPAHI";
+			player1_role = "SIPAHI";
                     }
-					if(player2.equals("CHOR"))
+		    if(player2.equals("CHOR"))
                     {
-						player1_role = "CHOR";
-					}
-					nextTurn = player2_name+ "'s" + " turn!";
+			player1_role = "CHOR";
+		    }
+		    nextTurn = player2_name+ "'s" + " turn!";
                 }
-				if(txtTurn.getText().equals(player2_name + "'s" + " turn!"))
+		if(txtTurn.getText().equals(player2_name + "'s" + " turn!"))
                 {
                     if(player2.equals("MANTRI"))
                     {
@@ -832,10 +829,10 @@
 
                             player1_role = "SIPAHI";
                         }
-						if(player3.equals("CHOR"))
+			if(player3.equals("CHOR"))
                         {
 									
-									player1_role = "CHOR";
+			    player1_role = "CHOR";
                         }
 								
                         nextTurn = player2_name+ "'s" + " turn!";
@@ -843,22 +840,22 @@
                     }
                     if(txtTurn.getText().equals(player2_name + "'s" + " turn!"))
                     {
-						if(player3.equals("MANTRI"))
+			if(player3.equals("MANTRI"))
                         {
-									player2_role = "MANTRI";
+			    player2_role = "MANTRI";
                         }
-						if(player3.equals("RAJA"))
+			if(player3.equals("RAJA"))
                         {
 								
                             player2_role = "RAJA";
                         }
-						if(player3.equals("SIPAHI"))
+			if(player3.equals("SIPAHI"))
                         {
-     						player2_role = "SIPAHI";
-	     				}
-		    			if(player3.equals("CHOR"))
+     			    player2_role = "SIPAHI";
+	     		}
+		    	if(player3.equals("CHOR"))
                         {
-							player2_role = "CHOR";
+			    player2_role = "CHOR";
 														
                             nextTurn = player3_name+ "'s" + " turn!";
 								
@@ -891,9 +888,9 @@
                             if(player3.equals("MANTRI"))
                             {
 									
-									player4_role = "MANTRI";
-							}
-							if(player3.equals("RAJA"))
+				player4_role = "MANTRI";
+			    }
+			   if(player3.equals("RAJA"))
                             {
 								player4_role = "RAJA";
 							}
