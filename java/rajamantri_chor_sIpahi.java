@@ -206,51 +206,51 @@
 			       LinearLayout layout = (LinearLayout)findViewById(R.id.mainLayoutPlayer);
 			       // Add the adView to it
 			       layout.addView(adView);
-			// Initiate a generic request to load it with an ad
-			adView.loadAd(new AdRequest());
+			       // Initiate a generic request to load it with an ad
+			       adView.loadAd(new AdRequest());
 			
-			editPlayer1 = (edit)findViewById(R.id.editPlayer1);
-			editPlayer2 = (edit)findViewById(R.id.editPlayer2);
-			editPlayer3 = (edit)findViewById(R.id.editPlayer3);
-			editPlayer4 = (edit)findViewById(R.id.editPlayer4);
+				editPlayer1 = (edit)findViewById(R.id.editPlayer1);
+				editPlayer2 = (edit)findViewById(R.id.editPlayer2);
+				editPlayer3 = (edit)findViewById(R.id.editPlayer3);
+				editPlayer4 = (edit)findViewById(R.id.editPlayer4);
+				
+				lblPlayer1 = (View) findViewById(R.id.lblPlayer1);
+				lblPlayer2 = (View) findViewById(R.id.lblPlayer2);
+				lblPlayer3 = (View) findViewById(R.id.lblPlayer3);
+				lblPlayer4 = (View) findViewById(R.id.lblPlayer4);
 			
-			lblPlayer1 = (View) findViewById(R.id.lblPlayer1);
-			lblPlayer2 = (View) findViewById(R.id.lblPlayer2);
-			lblPlayer3 = (View) findViewById(R.id.lblPlayer3);
-			lblPlayer4 = (View) findViewById(R.id.lblPlayer4);
-			
-			Display display = getWindowManager().getDefaultDisplay(); 
-			int width = display.getWidth();
-			int height = display.getHeight();
+				Display display = getWindowManager().getDefaultDisplay(); 
+				int width = display.getWidth();
+				int height = display.getHeight();
 
-			lblPlayer1.setGravity(Gravity.CENTER_HORIZONTAL);
-			lblPlayer2.setGravity(Gravity.CENTER_HORIZONTAL);
-			lblPlayer3.setGravity(Gravity.CENTER_HORIZONTAL);
-			lblPlayer4.setGravity(Gravity.CENTER_HORIZONTAL);
+				lblPlayer1.setGravity(Gravity.CENTER_HORIZONTAL);
+				lblPlayer2.setGravity(Gravity.CENTER_HORIZONTAL);
+				lblPlayer3.setGravity(Gravity.CENTER_HORIZONTAL);
+				lblPlayer4.setGravity(Gravity.CENTER_HORIZONTAL);
 
-			Log.v("AkandBakar", "Playernames:" + player1_name);
-			Log.v("AkandBakar", "Playernames:" + player2_name);
-			Log.v("AkandBakar", "Playernames:" + player3_name);
-			Log.v("AkandBakar", "Playernames:" + player4_name);
+				Log.v("AkandBakar", "Playernames:" + player1_name);
+				Log.v("AkandBakar", "Playernames:" + player2_name);
+				Log.v("AkandBakar", "Playernames:" + player3_name);
+				Log.v("AkandBakar", "Playernames:" + player4_name);
 			
-			btnMainMenu = (Button) findViewById(R.id.btnMainMenu);
-			btnMainMenu.setOnClickListener(new OnClickListener() 
-			{
-				public void onClick(View v) 
+				btnMainMenu = (Button) findViewById(R.id.btnMainMenu);
+				btnMainMenu.setOnClickListener(new OnClickListener() 
 				{
+	  			    public void onClick(View v) 
+				   {
 					Intent i = new Intent(RajaMantri.this, RajaMantri.class);
 					RajaMantri.this.startActivity(i);
 					finish();
 					
-				}
-			});
+				   }
+			        });
 			
-			btnSignin = (Button) findViewById(R.id.btnsignin);
-			btnSignin.setOnClickListener(new OnClickListener() 
-			{
+			       	btnSignin = (Button) findViewById(R.id.btnsignin);
+				btnSignin.setOnClickListener(new OnClickListener() 
+			 	{
 				
-				public void onClick(View v) 
-				{
+				    public void onClick(View v) 
+				    {
 					// TODO Auto-generated method stub
 					
 					player1_name = editPlayer1.getText().toString();
@@ -324,7 +324,7 @@
 								Log.v("RajaMantri", "########## Player Name:" + player4_name +" Role:" + player4_role);
 							}
 						}
-					});
+					   });
 					 					 
 					}
 				}
@@ -340,179 +340,172 @@
 		
 	    public void makeGuess()
 	    {
+		btnPlay.setText("SHUFFLE");
+		count = 0;
+		btnPlay.setText("SHUFFLE");
+		
+		btnPod1.setClickable(true);
+		btnPod2.setClickable(true);
+		btnPod3.setClickable(true);
+		btnPod4.setClickable(true);
+		
+		if(player1.equals("RAJA"))
+		{
+			btnPod1.setText("RAJA");
+			btnPod1.setBackgroundResource(R.drawable.podopen);
+			btnPod1.setClickable(false);
+		}
+		if(player2.equals("RAJA"))
+		{
+		    btnPod2.setText("RAJA");
+       		    btnPod2.setBackgroundResource(R.drawable.podopen);
+		    btnPod2.setClickable(false);
+		}
+		if(player3.equals("RAJA"))
+		{
+		    btnPod3.setText("RAJA");
+		    btnPod3.setBackgroundResource(R.drawable.podopen);
+		    btnPod3.setClickable(false);
+		}
+		if(player4.equals("RAJA"))
+		{
+		    btnPod4.setText("RAJA");
+	    	    btnPod4.setBackgroundResource(R.drawable.podopen);
+		    btnPod4.setClickable(false);
+		}
+		if(player1.equals("MANTRI"))
+		{
+		    btnPod1.setText("MANTRI");
+		    btnPod1.setBackgroundResource(R.drawable.podopen);
+		    btnPod1.setClickable(false);
+		}
+		if(player2.equals("MANTRI"))
+		{			
+		    btnPod2.setText("MANTRI");
+		    btnPod2.setBackgroundResource(R.drawable.podopen);
+		    btnPod2.setClickable(false);
+		}
+		if(player3.equals("MANTRI"))
+		{			
+		    btnPod3.setText("MANTRI");
+		    btnPod3.setBackgroundResource(R.drawable.podopen);
+		    btnPod3.setClickable(false);
+		}
+		if(player4.equals("MANTRI"))
+		{
+		    btnPod4.setText("MANTRI");
+		    btnPod4.setBackgroundResource(R.drawable.podopen);
+		    btnPod4.setClickable(false);
+		}
 			
-			btnPlay.setText("SHUFFLE");
-			count = 0;
-			btnPlay.setText("SHUFFLE");
+		if(player1_role.equals("MANTRI"))
+		{
+		    txtTurn.setText(player1_name + " will find the CHOR!");
+		}
+		if(player2_role.equals("MANTRI"))
+		{
+		    txtTurn.setText(player2_name + " will find the CHOR!");
+		}
+		if(player3_role.equals("MANTRI"))
+		{
+		    txtTurn.setText(player3_name + " will find the CHOR!");
+		}
+		if(player4_role.equals("MANTRI"))
+		{
+		    txtTurn.setText(player4_name + " will find the CHOR!");
+		}
 			
-			btnPod1.setClickable(true);
-			btnPod2.setClickable(true);
-			btnPod3.setClickable(true);
-			btnPod4.setClickable(true);
+		Log.v("AkhandBakar","#########" + btnPod1.getText());
 			
-			if(player1.equals("RAJA"))
+			
+		if(btnPod1.getText().equals(""))
+		{			
+		    btnPod1.setOnClickListener(new OnClickListener() 
+		    {		
+			public void onClick(View v) 
 			{
-				btnPod1.setText("RAJA");
+			    // TODO Auto-generated method stub
+			    Log.v("AkhandBakar","#########" + player1);
+			    if(player1.equals("CHOR"))
+			    {
+			        RajaMantri.guess = true;
 				btnPod1.setBackgroundResource(R.drawable.podopen);
-				btnPod1.setClickable(false);
-			}
-			if(player2.equals("RAJA"))
-			{
-				btnPod2.setText("RAJA");
-				btnPod2.setBackgroundResource(R.drawable.podopen);
-				btnPod2.setClickable(false);
-			}
-			if(player3.equals("RAJA"))
-			{
-				btnPod3.setText("RAJA");
-				btnPod3.setBackgroundResource(R.drawable.podopen);
-				btnPod3.setClickable(false);
-			}
-			if(player4.equals("RAJA"))
-			{
-				btnPod4.setText("RAJA");
-				btnPod4.setBackgroundResource(R.drawable.podopen);
-				btnPod4.setClickable(false);
-			}
-			if(player1.equals("MANTRI"))
-			{
-				btnPod1.setText("MANTRI");
+				btnPod1.setText("CHOR");
+							
+			    }
+		            else
+			    {
+				RajaMantri.guess = false;
 				btnPod1.setBackgroundResource(R.drawable.podopen);
-				btnPod1.setClickable(false);
+				btnPod1.setText("SIPAHI");
+			    }
+			    btnPod1.setClickable(false);
+			    btnPod2.setClickable(false);
+			    btnPod3.setClickable(false);
+			    btnPod4.setClickable(false);
+			    bpdateScore();
 			}
-			if(player2.equals("MANTRI"))
-			{			
-				btnPod2.setText("MANTRI");
+		   });
+		}	
+			
+		Log.v("AkhandBakar","#########" + btnPod2.getText());
+		if(btnPod2.getText().equals(""))
+		{
+     		    btnPod2.setOnClickListener(new OnClickListener() 
+		    {
+			public void onClick(View v) 
+			{
+			   // TODO Auto-generated method stub
+			   Log.v("AkhandBakar","#########" + player2);
+			   if(player2.equals("CHOR"))
+			   {					
+				RajaMantri.guess = true;
 				btnPod2.setBackgroundResource(R.drawable.podopen);
-				btnPod2.setClickable(false);
-			}
-			if(player3.equals("MANTRI"))
-			{			
-				btnPod3.setText("MANTRI");
+				btnPod2.setText("CHOR");
+			   } 
+			   else
+			   {						
+				RajaMantri.guess = false;
+				btnPod2.setBackgroundResource(R.drawable.podopen);
+				btnPod2.setText("SIPAHI");
+			   }
+			   btnPod1.setClickable(false);
+			   btnPod2.setClickable(false);
+			   btnPod3.setClickable(false);
+			   btnPod4.setClickable(false);
+			   updateScore();
+		       }
+		   });
+		}	
+		
+		Log.v("AkhandBakar","#########" + btnPod3.getText());
+		if(btnPod3.getText().equals(""))
+		{
+		    btnPod3.setOnClickListener(new OnClickListener() 
+		    {
+		        public void onClick(View v) 
+			{
+			   // TODO Auto-generated method stub
+			   Log.v("AkhandBakar","#########" + player3);
+			   if(player3.equals("CHOR"))
+			   {
+				RajaMantri.guess = true;
 				btnPod3.setBackgroundResource(R.drawable.podopen);
-				btnPod3.setClickable(false);
+				btnPod3.setText("CHOR");
+			   }
+    			   else
+			   {						
+			 	RajaMantri.guess = false;
+				btnPod3.setBackgroundResource(R.drawable.podopen);
+				btnPod3.setText("SIPAHI");						
+			   }
+			   btnPod1.setClickable(false);
+			   btnPod2.setClickable(false);
+			   btnPod3.setClickable(false);
+			   btnPod4.setClickable(false);
+			   updateScore();
 			}
-			if(player4.equals("MANTRI"))
-			{
-				btnPod4.setText("MANTRI");
-				btnPod4.setBackgroundResource(R.drawable.podopen);
-				btnPod4.setClickable(false);
-			}
-			
-			if(player1_role.equals("MANTRI"))
-			{
-				txtTurn.setText(player1_name + " will find the CHOR!");
-			}
-			if(player2_role.equals("MANTRI"))
-			{
-				txtTurn.setText(player2_name + " will find the CHOR!");
-			}
-			if(player3_role.equals("MANTRI"))
-			{
-				txtTurn.setText(player3_name + " will find the CHOR!");
-			}
-			
-			if(player4_role.equals("MANTRI"))
-			{
-				txtTurn.setText(player4_name + " will find the CHOR!");
-			}
-			
-			Log.v("AkhandBakar","#########" + btnPod1.getText());
-			
-			
-			if(btnPod1.getText().equals(""))
-			{			
-				btnPod1.setOnClickListener(new OnClickListener() 
-				{		
-					public void onClick(View v) 
-					{
-						// TODO Auto-generated method stub
-						Log.v("AkhandBakar","#########" + player1);
-						if(player1.equals("CHOR"))
-						{
-							RajaMantri.guess = true;
-							btnPod1.setBackgroundResource(R.drawable.podopen);
-							btnPod1.setText("CHOR");
-							
-						}
-						else
-						{
-							
-							RajaMantri.guess = false;
-							btnPod1.setBackgroundResource(R.drawable.podopen);
-							btnPod1.setText("SIPAHI");
-						}
-						btnPod1.setClickable(false);
-						btnPod2.setClickable(false);
-						btnPod3.setClickable(false);
-						btnPod4.setClickable(false);
-						updateScore();
-					}
-				});
-			}	
-			
-			
-			Log.v("AkhandBakar","#########" + btnPod2.getText());
-			if(btnPod2.getText().equals(""))
-			{
-				
-				btnPod2.setOnClickListener(new OnClickListener() 
-				{
-					
-					public void onClick(View v) 
-					{
-						// TODO Auto-generated method stub
-						Log.v("AkhandBakar","#########" + player2);
-						if(player2.equals("CHOR"))
-						{					
-							RajaMantri.guess = true;
-							btnPod2.setBackgroundResource(R.drawable.podopen);
-							btnPod2.setText("CHOR");
-						}
-						else
-						{						
-							RajaMantri.guess = false;
-							btnPod2.setBackgroundResource(R.drawable.podopen);
-							btnPod2.setText("SIPAHI");
-						}
-						btnPod1.setClickable(false);
-						btnPod2.setClickable(false);
-						btnPod3.setClickable(false);
-						btnPod4.setClickable(false);
-						updateScore();
-					}
-				});
-			}	
-			
-			Log.v("AkhandBakar","#########" + btnPod3.getText());
-			if(btnPod3.getText().equals(""))
-			{
-				
-				btnPod3.setOnClickListener(new OnClickListener() 
-				{
-					public void onClick(View v) 
-					{
-						// TODO Auto-generated method stub
-						Log.v("AkhandBakar","#########" + player3);
-						if(player3.equals("CHOR"))
-						{
-							RajaMantri.guess = true;
-							btnPod3.setBackgroundResource(R.drawable.podopen);
-							btnPod3.setText("CHOR");
-						}
-						else
-						{						
-							RajaMantri.guess = false;
-							btnPod3.setBackgroundResource(R.drawable.podopen);
-							btnPod3.setText("SIPAHI");						
-						}
-						btnPod1.setClickable(false);
-						btnPod2.setClickable(false);
-						btnPod3.setClickable(false);
-						btnPod4.setClickable(false);
-						updateScore();
-					}
-				});
+		    });
 			}
 			
 			
